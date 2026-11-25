@@ -1,33 +1,24 @@
-﻿# The script of the game goes in this file.
+﻿# --- CHARACTER DEFINITIONS ---
+define p = Character('Protagonist', color="#3e54e8")
+define d = Character('The Drawing', color="#e1e4e6")
+define n = Character(None) # Internal narrator, no name displayed
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# -- SENSORY ADAPTATION STATE (Second-Time Rule) ---
+# Exposure counts track iterative emergence (0 = unformed, 1 = raw input, 2+ = conscious processing)
+default sound_exposure = 0
+default touch_exposure = 0
+default sight_exposure = 0
+default smell_exposure = 0
+default taste_exposure = 0
 
-define e = Character("Eileen")
-
-
-# The game starts here.
-
+# --- MAIN STORY START ---
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
-
-    scene bg room
-
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
-
-    show eileen happy
-
-    # These display lines of dialogue.
-
-    e "You've created a new Ren'Py game."
-
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # This ends the game.
+    scene black
+    with fade
+    #testing dialogue
+    n "Hi, I'm the narrator"
+    d "Hi, I'm drawing"
+    p "Hi, I'm protagonist"
 
     return
