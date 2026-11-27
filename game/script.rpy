@@ -178,21 +178,18 @@ label start:
     n "The Drawing, intrigued by its lack of human senses earlier, decides to try and see if it can 'feel' things."
     n "The first thing it touches is the boy's pillow."
     n "It's hand extends outwards, making contact with the soft surface of the pillow."
-    if not touch_encountered:
-        # first time: raw sensory input (does NOT add a point)
-        $ touch_encountered = True
-        n "It can feel its hand physically touch the object, but it lifts its hand away out of surprise."
-        d "*internal dialogue*: I didn't feel anything, but I felt something."
-        n "It doesn't feel anything."
-    else:
-        # second time (and beyond): cognitive adaptation (+1 exposure point)
-        $ touch_exposure += 1
-        n "The Drawing touches the pillow again, this time, trying to feel an actual sensation."
-        n "What he got in return was a fuzzy feeling on his palm, warm and textured."
-        n "The softness of the pillow entrances the Drawing."
-        d "*internal dialogue*: I recognize this texture now. It compresses under pressure."
-        n "The sensation locks into place. A faint spark of color settles into his fingertips." # sparkle sound effects, signifying +1 points!
-
+    # first time: raw sensory input (does NOT add a point)
+    n "It can feel its hand physically touch the object, but it lifts its hand away out of surprise."
+    d "*internal dialogue*: I didn't feel anything, but I felt something."
+    n "It doesn't feel anything."
+    $ touch_encountered = True
+    # second time (and beyond): cognitive adaptation (+1 exposure point)
+    n "The Drawing touches the pillow again, this time, trying to feel an actual sensation."
+    n "What he got in return was a fuzzy feeling on his palm, warm and textured."
+    n "The softness of the pillow entrances the Drawing."
+    d "*internal dialogue*: I recognize this texture now. It compresses under pressure."
+    n "The sensation locks into place. A faint spark of color settles into his fingertips." # sparkle sound effects, signifying +1 points!
+    $ touch_exposure += 1
     n "The Drawing, amazed, zones out and holds onto the pillow tightly."
     n "The door creaks open, and the boy pauses at the door."
     p "Uhh.. What.. are you doing?"
