@@ -4,13 +4,28 @@ define d = Character('The Drawing', color="#e1e4e6")
 define n = Character(None) # Internal narrator, no name displayed
 
 # -- SENSORY ADAPTATION STATE (Second-Time Rule) ---
-# Exposure counts track iterative emergence (0 = unformed, 1 = raw input, 2+ = conscious processing)
+# Conditional logic for exposure
+default sound_encountered = False
+default touch_encountered = False
+default sight_encountered = False
+default smell_encountered = False
+default taste_encountered = False
+default happiness_encountered = False
+default sadness_encountered = False
+default anger_encountered = False
+default fear_encountered = False
+default pain_encountered = False
+# Exposure counts track iterative emergence (0 = unformed, 1 = first interaction, 2+ = conscious processing). All must be value 10+ to gain full color.
 default sound_exposure = 0
 default touch_exposure = 0
 default sight_exposure = 0
 default smell_exposure = 0
 default taste_exposure = 0
-
+default happiness_exposure = 0
+default sadness_exposure = 0
+default anger_exposure = 0
+default fear_exposure = 0
+default pain_exposure = 0
 # --- MAIN STORY START ---
 label start:
     # - PHASE 1 PART 1 -
@@ -133,6 +148,99 @@ label start:
     scene black
     with fade
     
+    n "..."
+    n "As the sun beams its golden rays through the blinds, light pours into the room, and the irritating noise of a phone alarm rings. The boy rolls around in bed, holding his pillow over his ears."
+    p "Ugh... I hate this so much.."
+    n "Opening it's eyes, the Drawing tilts it's head towards the boy"
+    d "What is it you hate? This seems sudden."
+    n "The Drawing, confused, tilts its head slightly."
+    p "Oh. You scared me there, I forgot you existed."
+    d "Ouch. I am still confused by what you resent so deeply though."
+    p "... You don't hear it? My damn alarm dude. I can't even wake up peacefully."
+    n "..."
+    d "An alarm? I.. Don't hear any alarm."
+    p "What? I drew you ears, and you're dead? You gotta be kidding me. How can you even hear me right now?"
+    d "Honestly I don't know either."
+    n "..."
+    n "..."
+    n "..."
+    p "Uh, well, I have to get ready for school now. Though, I can't leave you alone here, so you're coming with me."
+    d "Would I not draw attention from the people at school? I can hide in your closet or someplace if necessary."
+    p "You'll be in my backpack all day, no one will notice. Trust me."
+    p "Um, maybe I'll leave a little opening for you to breathe though, I'm not trying to lug around a corpse at school."
+    d "Fascinating. I was unaware that I could breathe."
+    d "Now that my soul is tethered to this vessel, I shall assume all functions of a regular human being, as to blend in with society and not raise any eyebrows."
+    n "The boy raises his eyebrows."
+    p "Dude. You sound even more out of place saying that."
+    p "Also, here's a tip for you if you want to 'blend in', drop the philosophical talk, you'll thank me later."
+    d "Harsh. But I will humbly accept your criticism. 'you da man' as they say."
+    n "The boy shakes his head in disbelief, as he goes to the washroom to get ready."
+    n "The Drawing, intrigued by its lack of human senses earlier, decides to try and see if it can 'feel' things."
+    n "The first thing it touches is the boy's pillow."
+    n "It's hand extends outwards, making contact with the soft surface of the pillow."
+    if not touch_encountered:
+        # first time: raw sensory input (does NOT add a point)
+        $ touch_encountered = True
+        n "It can feel its hand physically touch the object, but it lifts its hand away out of surprise."
+        d "*internal dialogue*: I didn't feel anything, but I felt something."
+        n "It doesn't feel anything."
+    else:
+        # second time (and beyond): cognitive adaptation (+1 exposure point)
+        $ touch_exposure += 1
+        n "The Drawing touches the pillow again, this time, trying to feel an actual sensation."
+        n "What he got in return was a fuzzy feeling on his palm, warm and textured."
+        n "The softness of the pillow entrances the Drawing."
+        d "*internal dialogue*: I recognize this texture now. It compresses under pressure."
+        n "The sensation locks into place. A faint spark of color settles into his fingertips." # sparkle sound effects, signifying +1 points!
+
+    n "The Drawing, amazed, zones out and holds onto the pillow tightly."
+    n "The door creaks open, and the boy pauses at the door."
+    p "Uhh.. What.. are you doing?"
+    d "Can I have this artifact?"
+    n "A brief moment of silence hangs in the air."
+    p "That's called a pillow. And it's mine, go buy one for yourself if you want it."
+    n "The Drawing, seeming to grasp the situation, puts the dots together."
+    d "I see. This is where financial assets come in handy. The more you know."
+    p "Just say money dude.."
+    n "The Drawing, having understood the true value of money, capable of buying any desires one may want, is at awe."
+    d "Now I understand why humans labor away at jobs to earn income. It is so lavishly spend on fuzzy head cushions."
+    n "The boy heaves a heavy sigh and grabs his backpack, ready to leave the house."
+    p "Okay, hop into my backpack."
+    p "Wait, you wouldn't fit. Can I like, fold you up origami style?"
+    d "I humbly request you morph me into a kitsune. Or a butterfly if that is easier for you to fold."
+    p "Woah there, I'm not some origami wiz, that was just a.. What is it now? A metaphor?"
+    d "Metaphor. Or Hyperbole, depending on what you meant."
+    p "I don't have the time to fold you up pretty, so you're just going to go hot dog style today!"
+    d "As you wish."
+    p "Wait, do you feel pain? Aren't you gaining senses? This will probably hurt."
+    d "Perhaps this will be my first demonstration of pain. Go ahead, I don't mind."
+    n "Reluctantly, The boy grabs the Drawing by the torso, and begins to fold. Strangely, the Drawing feels somewhat warm, despite not even having any internal organs or blood flowing through his 'body'."
+    if not pain_encountered:
+        # - first time: sensory shock only (does NOT add a point)
+        $ pain_encountered = True
+        n "A sharp compression overcomes the Drawing, but no pain is felt. Yet." 
+    else:
+        # - second time (and beyond): sensory adaptation -
+        $ pain_exposure += 1
+        d "*internal dialogue*: Pressure along the seam again. My form yields to the crease."
+        n "The pain has been processed. A sense of peace overcomes the Drawing." # sparkle sound effects, signifying +1 points!
+
+    n "With that, the Drawing was folded in two, then into four. The boy stuffed him in his bag, and zipped it up slightly but left a small opening for air."
+    p "Did that hurt? Sorry, but you're going to have to stay this way until we get home later."
+    d "I have yet to feel pain. Next time though, it may hurt, because I usually start feeling things the second time."
+    p "Uh, yeah. We'll cross that bridge when we get there."
+    n "The boy walks out of his home and locks the door behind him."
+    n "It's a beautiful day outside. Birds are singing, flowers are blooming, you get it."
+    n "The sun glares in is face, a new day, a new life, and a new friend in his backpack."
+    p "I feel like I'm living in a video game or something. What kind of divine punishment is this?"
+    d "Did you say something?"
+    p "No. Let's just go to school now."
+    n "..."
+    # - PHASE 2 PART 1 -
+    label phase_1_part_2:
+    scene black
+    with fade
+
     
     
     
