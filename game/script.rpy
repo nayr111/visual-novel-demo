@@ -18,9 +18,9 @@ label start:
     scene black
     with fade
     
-    n "A character walks into their room, and boots up their computer."
-    n "They turn on a digital art program, and start to draw."
-    n "They decide to draw a monochrome character, perhaps for their visual novel project?"
+    n "A boy walks into his room, and boots up his computer."
+    n "He turns on a digital art program, and starts to draw."
+    n "He decides to draw a monochrome character, perhaps for his visual novel project?"
     # - CHOICE 1: LOOK -
     n "CHOOSE YOUR LOOK:"
     menu:
@@ -46,11 +46,33 @@ label start:
             pass
         "NO":
             pass
-    n "The character starts to draw..."
-
-
-    
-    
+    n "The boy starts to draw..."
+    n "..."
+    n "..."
+    n "..."
+    p "*yawn* I'm going to go get a glass of water.."
+    n "The boy exits the room."
+    n "A few moments pass by..."
+    n "The rain pours harder.. then.."
+    n "!BOOM!"
+    n "*lights flicker*"
+    n "*computer starts to turn on and off*"
+    n "*a large stream of light bursts out of the computer*"
+    n "*the drawing comes to life*"
+    n "..."
+    n "The boy walks back into the room."
+    n "..."
+    p "What in the... What is this? Who are you..?"
+    p "*internal dialogue*: Did my drawing just... Come to life!!??!?"
+    n "The drawing stares at the boy."
+    d "Awaiting input. What is your name?"
+    p "Wh-wha-!"
+    n "The boy collapses onto the ground"
+    n "..."    
+    # - PHASE 1 PART 2 -
+    label phase_1_part_2:
+    scene black
+    with fade
     
     
     
