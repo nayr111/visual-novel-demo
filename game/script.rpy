@@ -237,7 +237,7 @@ label start:
     p "No. Let's just go to school now."
     n "..."
     # - PHASE 2 PART 1 -
-    label phase_1_part_2:
+    label phase_2_part_1:
     scene black
     with fade
 
