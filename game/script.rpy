@@ -13,12 +13,68 @@ default taste_exposure = 0
 
 # --- MAIN STORY START ---
 label start:
-
+    # - PHASE 1 PART 1 -
+    label phase_1_part_1:
     scene black
     with fade
-    #testing dialogue
-    n "Hi, I'm the narrator"
-    d "Hi, I'm drawing"
-    p "Hi, I'm protagonist"
+    
+    n "A character walks into their room, and boots up their computer."
+    n "They turn on a digital art program, and start to draw."
+    n "They decide to draw a monochrome character, perhaps for their visual novel project?"
+    # - CHOICE 1: LOOK -
+    n "CHOOSE YOUR LOOK:"
+    menu:
+        "FUNNY":
+            pass
+        "COOL":
+            pass
+        "NEUTRAL":
+            pass
+    # - CHOICE 2: PERSONALITY -
+    n "CHOOSE YOUR PERSONALITY:"
+    menu:
+        "TALKGPT":
+            pass
+        "LIBRA":
+            pass
+        "MONET":
+            pass
+    # - CHOICE 3: CONFIRMATION -
+    n "ARE YOU SURE?"
+    menu:
+        "YES":
+            pass
+        "NO":
+            pass
+    n "The character starts to draw..."
 
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return
