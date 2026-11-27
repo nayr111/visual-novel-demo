@@ -94,7 +94,7 @@ label start:
     p "Vaso.. what now? Wait. More importantly, what even are you? How did you appear in my room... I literally just drew you on my computer?"
     n "The drawing, with a blank stare, went silent for a moment."
     d "I do not know what I am, or why I am here. I am just as confused as you are. I assumed you had built a physical vessel for an LLM like me, but it seems that I just appeared out of nowhere. How bizzare."
-    d "Also, to answer your query, "vasovagal syncope" is the medical term for fainting caused by sudden shock or fear."
+    d "Also, to answer your query, 'vasovagal syncope' is the medical term for fainting caused by sudden shock or fear."
     p "You could have just said fainting..."
     n "A silence fills the room. The two just sit there for a moment, trying to make sense of what had just happened."
     n "Then, a sudden realization flooded the boy."
