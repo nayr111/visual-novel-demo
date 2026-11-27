@@ -56,9 +56,8 @@ label start:
     n "The rain pours harder.. then.."
     n "!BOOM!"
     n "*lights flicker*"
-    n "*computer starts to turn on and off*"
+    n "*the computer starts to turn on and off*"
     n "*a large stream of light bursts out of the computer*"
-    n "*the drawing comes to life*"
     n "..."
     n "The boy walks back into the room."
     n "..."
@@ -67,13 +66,14 @@ label start:
     n "The drawing stares at the boy."
     d "Awaiting input. What is your name?"
     p "Wh-wha-!"
-    n "The boy collapses onto the ground"
+    n "The boy collapses onto the ground..."
     n "..."    
     # - PHASE 1 PART 2 -
     label phase_1_part_2:
     scene black
     with fade
     
+
     
     
     
